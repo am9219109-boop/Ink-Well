@@ -1,52 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- ============================================= -->
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION            -->
-  <!-- Replace with your actual verification code    -->
-  <!-- ============================================= -->
-  <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
-  
-  <!-- ============================================= -->
-  <!-- SEO META TAGS - IMPORTANT FOR GOOGLE         -->
-  <!-- ============================================= -->
-  <title>InkWell · Premium Content Writing Services</title>
-  <meta name="description" content="Professional content writing services: blog articles, website copy, SEO content, business & marketing, tech writing, and more. 200+ articles written." />
-  <meta name="keywords" content="content writing, SEO content, blog writing, website copy, marketing content, tech writing, freelance writer" />
-  <link rel="canonical" href="https://am9219109-boop.github.io/Ink-Well/" />
-  
-  <!-- Open Graph (for social sharing) -->
-  <meta property="og:title" content="InkWell · Premium Content Writing Services" />
-  <meta property="og:description" content="Professional content writing services: blog articles, website copy, SEO content, business & marketing, tech writing, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://am9219109-boop.github.io/Ink-Well/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&auto=format" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="InkWell · Premium Content Writing Services" />
-  <meta name="twitter:description" content="Professional content writing services: blog articles, website copy, SEO content, business & marketing, tech writing, and more." />
-  
-  <!-- Robots -->
-  <meta name="robots" content="index, follow" />
-  
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
-
+  <title>InkWell · premium content studio</title>
   <!-- Google Font & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- AOS (Animate On Scroll) library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  
   <style>
-    /* ============================================= */
-    /* ALL STYLES                                    */
-    /* ============================================= */
     * {
       margin: 0;
       padding: 0;
@@ -67,6 +33,7 @@
       padding: 0 2rem;
     }
 
+    /* ----- BUTTONS ----- */
     .btn-primary {
       display: inline-block;
       background: #6c3bf1;
@@ -208,7 +175,7 @@
       width: 100%;
     }
 
-    /* ----- HERO ----- */
+    /* ----- HERO with VIDEO BACKGROUND ----- */
     .hero-wrapper {
       position: relative;
       border-radius: 40px;
@@ -332,7 +299,7 @@
       50% { transform: translateY(-16px); }
     }
 
-    /* ----- SERVICES ----- */
+    /* ----- SERVICES (with icons & hover) ----- */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -412,7 +379,7 @@
       z-index: 1;
     }
 
-    /* ----- ABOUT ----- */
+    /* ----- ABOUT with image ----- */
     .about-section {
       background: #f8f5ff;
       border-radius: 48px;
@@ -483,7 +450,84 @@
       display: block;
     }
 
-    /* ----- TEAMS (EXPERTISE) ----- */
+    /* ----- BLOG SECTION (NEW) ----- */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3.5rem;
+    }
+
+    .blog-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 1.8rem;
+      border: 1.5px solid #dcc9ff;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px -10px #b48aff40;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      background: white;
+      border-color: #b48aff;
+      box-shadow: 0 24px 40px -16px #7c3aed80;
+    }
+
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #5a5079;
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-meta .tag {
+      background: #f0e7ff;
+      padding: 0.15rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #5b2bb0;
+    }
+
+    .blog-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .blog-card p {
+      color: #3f3857;
+      font-size: 0.95rem;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card .read-more {
+      font-weight: 600;
+      color: #7c3aed;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: 0.2s;
+      cursor: default;
+      align-self: flex-start;
+    }
+
+    .blog-card .read-more i {
+      transition: 0.2s;
+    }
+
+    .blog-card .read-more:hover i {
+      transform: translateX(4px);
+    }
+
+    /* ----- TEAMS (with hover animation) ----- */
     .teams-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -528,82 +572,6 @@
     .team-card p {
       color: #4f4a66;
       font-size: 0.9rem;
-    }
-
-    /* ----- BLOG ----- */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0 3.5rem;
-    }
-
-    .blog-card {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(4px);
-      border-radius: 40px;
-      padding: 1.8rem 1.8rem 1.5rem;
-      border: 1.5px solid #dcc9ff;
-      transition: 0.3s;
-      box-shadow: 0 8px 20px -10px #b48aff40;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-8px);
-      background: white;
-      border-color: #b48aff;
-      box-shadow: 0 24px 40px -16px #7c3aed80;
-    }
-
-    .blog-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #5a5079;
-      margin-bottom: 0.6rem;
-    }
-
-    .blog-meta .tag {
-      background: #f0e7ff;
-      padding: 0.15rem 1rem;
-      border-radius: 40px;
-      font-weight: 600;
-      color: #5b2bb0;
-    }
-
-    .blog-card h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .blog-card p {
-      color: #3f3857;
-      font-size: 0.95rem;
-      flex: 1;
-      margin-bottom: 1rem;
-    }
-
-    .blog-card .read-more {
-      font-weight: 600;
-      color: #7c3aed;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: 0.2s;
-      cursor: default;
-    }
-
-    .blog-card .read-more i {
-      transition: 0.2s;
-    }
-
-    .blog-card .read-more:hover i {
-      transform: translateX(4px);
     }
 
     /* ----- TESTIMONIALS ----- */
@@ -712,7 +680,7 @@
       font-size: 0.95rem;
     }
 
-    /* ----- CONTACT BANNER ----- */
+    /* ----- CONTACT BANNER (UPDATED with social links) ----- */
     .contact-banner {
       background: linear-gradient(135deg, #1e1a2b, #2d2642);
       border-radius: 48px;
@@ -757,32 +725,67 @@
       z-index: 1;
     }
 
-    .contact-banner .phone {
-      font-size: 1.6rem;
-      font-weight: 600;
-      background: rgba(255,255,255,0.06);
-      padding: 0.5rem 2rem;
+    .contact-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-social-links a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
       border-radius: 60px;
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      z-index: 1;
       transition: 0.3s;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .contact-banner .phone:hover {
-      background: rgba(255,255,255,0.12);
+    .contact-social-links a:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.16);
     }
 
-    .contact-banner .btn-primary {
-      background: white;
-      color: #1e1a2b;
-      box-shadow: none;
-      position: relative;
-      z-index: 1;
+    .contact-social-links .whatsapp {
+      background: #25D366;
+      border-color: #25D366;
     }
 
-    .contact-banner .btn-primary:hover {
-      background: #f3eeff;
+    .contact-social-links .whatsapp:hover {
+      background: #1da851;
+      border-color: #1da851;
+    }
+
+    .contact-social-links .linkedin {
+      background: #0A66C2;
+      border-color: #0A66C2;
+    }
+
+    .contact-social-links .linkedin:hover {
+      background: #084a8a;
+      border-color: #084a8a;
+    }
+
+    .contact-social-links .email {
+      background: #6c3bf1;
+      border-color: #6c3bf1;
+    }
+
+    .contact-social-links .email:hover {
+      background: #5a2fd6;
+      border-color: #5a2fd6;
+    }
+
+    .contact-social-links i {
+      font-size: 1.3rem;
     }
 
     /* ----- FOOTER ----- */
@@ -867,6 +870,9 @@
       .hero-stats {
         justify-content: center;
       }
+      .contact-social-links {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 550px) {
@@ -883,8 +889,13 @@
       .testimonials {
         padding: 2rem 1.5rem;
       }
+      .contact-social-links a {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
     }
 
+    /* ----- AOS overrides (smooth) ----- */
     [data-aos] {
       pointer-events: none;
     }
@@ -911,7 +922,7 @@
       </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO with video background & image -->
     <div class="hero-wrapper">
       <video class="hero-video-bg" autoplay muted loop playsinline>
         <source src="https://cdn.pixabay.com/video/2022/02/28/108139-683089071_large.mp4" type="video/mp4" />
@@ -978,7 +989,7 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT with image -->
     <div class="about-section" id="about">
       <div class="about-grid">
         <div class="about-text" data-aos="fade-right" data-aos-duration="800">
@@ -999,7 +1010,199 @@
     </div>
 
     <!-- ============================================= -->
-    <!-- TEAMS / EXPERTISE                             -->
+    <!-- BLOG SECTION (NEW)                           -->
     <!-- ============================================= -->
+    <div id="blog">
+      <span class="section-tag" data-aos="fade-up"><i class="fas fa-blog"></i> Latest from my blog</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Insights & articles</h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="150">Tips, strategies, and stories from my writing journey.</p>
+    </div>
+
+    <div class="blog-grid">
+      <!-- Blog Post 1 -->
+      <div class="blog-card" data-aos="zoom-in" data-aos-duration="600">
+        <div class="blog-meta">
+          <span><i class="far fa-calendar-alt"></i> July 25, 2026</span>
+          <span class="tag">SEO</span>
+        </div>
+        <h3>How to write content that ranks on Google</h3>
+        <p>Practical tips to balance keyword strategy with genuine reader value — without sounding robotic.</p>
+        <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="blog-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+        <div class="blog-meta">
+          <span><i class="far fa-calendar-alt"></i> July 18, 2026</span>
+          <span class="tag">marketing</span>
+        </div>
+        <h3>Storytelling in B2B: turning data into narrative</h3>
+        <p>How to use case studies and research to build trust and drive conversions in business writing.</p>
+        <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="blog-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+        <div class="blog-meta">
+          <span><i class="far fa-calendar-alt"></i> July 10, 2026</span>
+          <span class="tag">tech</span>
+        </div>
+        <h3>Explaining complex tech: a writer's guide</h3>
+        <p>Break down intricate concepts into clear, engaging content that both experts and novices appreciate.</p>
+        <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- TEAMS / EXPERTISE -->
     <div id="teams">
-      <span
+      <span class="section-tag" data-aos="fade-up"><i class="fas fa-users"></i> My expertise</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Writing across every channel.</h2>
+    </div>
+    <div class="teams-grid">
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600">
+        <i class="fas fa-pen-fancy"></i>
+        <h4>Blog & Editorial</h4>
+        <p>Engaging, well-researched articles that inform and inspire.</p>
+      </div>
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600" data-aos-delay="100">
+        <i class="fas fa-search"></i>
+        <h4>SEO Content</h4>
+        <p>Strategically optimized content that ranks and attracts traffic.</p>
+      </div>
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600" data-aos-delay="200">
+        <i class="fas fa-bullhorn"></i>
+        <h4>Marketing Copy</h4>
+        <p>Persuasive copy for campaigns, emails, and sales pages.</p>
+      </div>
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600" data-aos-delay="300">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Tech Writing</h4>
+        <p>Clear explanations of complex technical concepts.</p>
+      </div>
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600" data-aos-delay="400">
+        <i class="fas fa-graduation-cap"></i>
+        <h4>Educational Content</h4>
+        <p>Training materials, guides, and instructional content.</p>
+      </div>
+      <div class="team-card" data-aos="flip-up" data-aos-duration="600" data-aos-delay="500">
+        <i class="fas fa-hashtag"></i>
+        <h4>Social Media</h4>
+        <p>Scroll-stopping captions and threads that build community.</p>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonials" id="testimonials">
+      <h2 data-aos="fade-up"><i class="fas fa-quote-left" style="color: #6c3bf1; margin-right: 0.5rem;"></i> Hear from my clients</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-quote-right"></i>
+          <blockquote>“InkWell transformed our blog. Traffic doubled in 3 months, and the engagement is through the roof.”</blockquote>
+          <cite>Priya Sharma</cite>
+          <span class="role">Marketing Director, TechStart</span>
+        </div>
+        <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-quote-right"></i>
+          <blockquote>“The product descriptions they wrote increased our conversion rate by 20%. Absolutely recommend.”</blockquote>
+          <cite>Rahul Mehta</cite>
+          <span class="role">Founder, EcoGoods</span>
+        </div>
+        <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-quote-right"></i>
+          <blockquote>“Professional, adaptable, and always on deadline. A pleasure to work with.”</blockquote>
+          <cite>Ananya Reddy</cite>
+          <span class="role">Content Lead, FinWise</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section" id="faq">
+      <span class="section-tag" data-aos="fade-up"><i class="fas fa-question-circle"></i> Got questions?</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500">
+          <h4>What types of content do you write?</h4>
+          <p>Blog articles, website copy, SEO content, business & marketing pieces, educational material, tech articles, product descriptions, and social media content.</p>
+        </div>
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+          <h4>Do you optimize content for SEO?</h4>
+          <p>Absolutely. Every piece is crafted with SEO best practices in mind — from keyword research to on-page optimization.</p>
+        </div>
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
+          <h4>Can you adapt to different industries?</h4>
+          <p>Yes. I’ve written for tech, finance, health, education, e-commerce, and more. I adapt tone and style to fit your brand and audience.</p>
+        </div>
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+          <h4>What's your process?</h4>
+          <p>Brief → research → draft → revise → deliver. I work closely with you to ensure the final piece exceeds expectations.</p>
+        </div>
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="400">
+          <h4>How much do you charge?</h4>
+          <p>Rates depend on project scope and complexity. I offer competitive pricing for high-quality, professional content.</p>
+        </div>
+        <div class="faq-item" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+          <h4>How can I get started?</h4>
+          <p>Reach out via the contact button or call me directly. Let’s discuss your project and how I can help you achieve your goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- CONTACT BANNER (UPDATED with social links)    -->
+    <!-- ============================================= -->
+    <div class="contact-banner" data-aos="fade-up" data-aos-duration="800">
+      <div>
+        <h3><i class="fas fa-feather-alt" style="margin-right: 0.5rem;"></i> Let's create something great</h3>
+        <p>Have a project in mind? Let's connect.</p>
+      </div>
+      <div class="contact-social-links">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/917667390694?text=Hi%20I'm%20interested%20in%20your%20writing%20services!" target="_blank" class="whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ayush-mishra-32754a311/" target="_blank" class="linkedin">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <!-- Email -->
+        <a href="mailto:am9219109@gmail.com" class="email">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="copy">
+        <i class="fas fa-feather-alt" style="color: #6c3bf1; margin-right: 6px;"></i> InkWell · 2026
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#teams">Expertise</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="social">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- AOS script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 60,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+  </script>
+</body>
+</html>
