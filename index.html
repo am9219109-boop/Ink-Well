@@ -1215,38 +1215,60 @@
   <p class="section-sub" data-aos="fade-up" data-aos-delay="150">Tips, strategies, and stories from my writing journey.</p>
 </div>
 
-<!-- STEP 1: Container where posts appear -->
-<div id="blog-posts"></div>
+<!-- Container where posts appear -->
+<div id="blog-posts" style="min-height:100px;">
+  <p style="text-align:center;color:#6c3bf1;">Loading blog posts...</p>
+</div>
 
-<!-- STEP 2: JavaScript to display posts -->
 <script>
 function displayBlogPosts(json) {
-  if (!json.feed || !json.feed.entry) {
-    document.getElementById("blog-posts").innerHTML = '<p style="text-align:center;color:#6c3bf1;padding:2rem;">No blog posts found. Start writing on Blogger!</p>';
+  console.log("Blogger feed loaded:", json); // This helps with debugging
+  
+  // Check if posts exist
+  if (!json.feed || !json.feed.entry || json.feed.entry.length === 0) {
+    document.getElementById("blog-posts").innerHTML = `
+      <p style="text-align:center;color:#6c3bf1;padding:2rem;">
+        No blog posts found yet. <a href="https://www.blogger.com/blog/posts/5261024318327972716" target="_blank" style="color:#6c3bf1;text-decoration:underline;">Write your first post!</a>
+      </p>
+    `;
     return;
   }
 
   var output = '<div class="blog-grid">';
   for (var i = 0; i < Math.min(json.feed.entry.length, 6); i++) {
     var post = json.feed.entry[i];
-    var title = post.title.$t;
-    var content = post.content ? post.content.$t : post.summary.$t;
+    var title = post.title ? post.title.$t : "Untitled";
+    
+    // Get content or summary
+    var content = "";
+    if (post.content) {
+      content = post.content.$t;
+    } else if (post.summary) {
+      content = post.summary.$t;
+    }
     content = content.replace(/<[^>]*>/g, '').substring(0, 150) + '...';
     
+    // Find the post link
     var link = '#';
-    for (var j = 0; j < post.link.length; j++) {
-      if (post.link[j].rel === 'alternate') {
-        link = post.link[j].href;
-        break;
+    if (post.link) {
+      for (var j = 0; j < post.link.length; j++) {
+        if (post.link[j].rel === 'alternate') {
+          link = post.link[j].href;
+          break;
+        }
       }
     }
     
-    var date = new Date(post.published.$t);
-    var formattedDate = date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
+    // Format the date
+    var formattedDate = "Unknown date";
+    if (post.published && post.published.$t) {
+      var date = new Date(post.published.$t);
+      formattedDate = date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    }
     
     output += `
       <div class="blog-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="${i * 100}">
@@ -1262,13 +1284,23 @@ function displayBlogPosts(json) {
   }
   output += '</div>';
   
+  // Add "View All" link
   output += '<div style="text-align: center; margin: 1.5rem 0 3.5rem;">';
   output += '<a href="https://www.blogger.com/blog/posts/5261024318327972716" target="_blank" class="btn-outline">View all posts <i class="fas fa-arrow-right"></i></a>';
   output += '</div>';
   
   document.getElementById("blog-posts").innerHTML = output;
 }
+
+// Handle errors
+function handleBloggerError() {
+  document.getElementById("blog-posts").innerHTML = `
+    <p style="text-align:center;color:#6c3bf1;padding:2rem;">
+      Could not load blog posts. <a href="https://www.blogger.com/blog/posts/5261024318327972716" target="_blank" style="color:#6c3bf1;text-decoration:underline;">Visit my blog</a>
+    </p>
+  `;
+}
 </script>
 
-<!-- STEP 3: Load your Blogger posts -->
-<script src="https://www.blogger.com/feeds/5261024318327972716/posts/default?alt=json-in-script&callback=displayBlogPosts&max-results=6"></script>
+<!-- Load your Blogger posts -->
+<script src="https://www.blogger.com/feeds/5261024318327972716/posts/default?alt=json-in-script&callback=displayBlogPosts&max-results=6" onerror="handleBloggerError()"></script>
